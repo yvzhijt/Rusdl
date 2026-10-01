@@ -1,0 +1,12 @@
+[package]
+name = "circuit-sim"
+version = "0.1.0"
+edition = "2021"
+description = "Rusdl 电路仿真引擎 —— 基于 circuitjs1 开源项目移植并简化的无头电路求解器"
+
+# No external dependencies on purpose. The MNA solver owns a small dense `Matrix` and its own
+# Crout LU (`lu` module) rather than pulling in a general linear-algebra crate, because the
+# numerics have to match circuitjs1's `lu_factor` exactly: its all-zero-row pre-scan, its
+# `>=` pivot tie-break, and its 1e-18 zero-pivot fudge are all load-bearing for reproducing
+# the reference simulator's results.
+[dependencies]

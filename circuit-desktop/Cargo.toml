@@ -1,0 +1,22 @@
+[package]
+name = "circuit-desktop"
+version = "0.1.0"
+edition = "2021"
+description = "Rusdl —— 一个参考开源项目 circuitjs1 自定义的简略电路仿真桌面应用"
+
+# The crate keeps its descriptive name so the workspace and the library dependency read
+# sensibly, but the program the user actually runs is the project's own name.
+[[bin]]
+name = "Rusdl"
+path = "src/main.rs"
+
+[dependencies]
+circuit-sim = { path = "../circuit-sim" }
+eframe = { version = "0.29", features = ["default"] }
+egui = "0.29"
+image = { version = "0.25", default-features = false, features = ["ico"] }
+rfd = "0.15"
+
+[dev-dependencies]
+# Only used to dump rendered symbols to a file so the drawing code can be eyeballed.
+png = "0.17"

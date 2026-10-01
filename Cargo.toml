@@ -1,0 +1,8 @@
+[workspace]
+members = ["circuit-sim", "circuit-desktop"]
+resolver = "2"
+
+[workspace.dependencies]
+nalgebra = "0.33"
+rayon = "1.10"
+serde = { version = "1.0", features = ["derive"] }
